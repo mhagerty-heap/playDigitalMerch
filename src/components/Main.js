@@ -10,7 +10,7 @@ const Main = () => {
 <meta charSet="UTF-8" />
 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play | SaaS-Based Admin UI</title>
+<title>Play | Have fun and Play!</title>
 <link
   rel="shortcut icon"
   href="/images/marketing/favicon.png"
