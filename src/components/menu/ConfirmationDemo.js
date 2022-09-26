@@ -3,8 +3,7 @@ import React from 'react';
 export const ConfirmationDemo = () => {
     return (
         <div className="flex align-items-center py-5 px-3">
-            <i className="pi pi-fw pi-check mr-2 text-2xl" />
-            <p className="m-0 text-lg">Confirmation Component Content via Child Route</p>
+            <img width='500' height='650' src={'/images/onboarding/step4.png'} />
         </div>
     )
 }

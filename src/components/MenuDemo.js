@@ -138,10 +138,10 @@ const MenuDemo = () => {
     ];
 
     const wizardItems = [
-        { label: 'Personal', command: () => history.push('/menu') },
-        { label: 'Seat', command: () => history.push('/menu/seat') },
-        { label: 'Payment', command: () => history.push('/menu/payment') },
-        { label: 'Confirmation', command: () => history.push('/menu/confirmation') }
+        { label: 'Click "Product Management"', command: () => history.push('/menu') },
+        { label: 'Click "New"', command: () => history.push('/menu/seat') },
+        { label: 'Enter Product Details', command: () => history.push('/menu/payment') },
+        { label: 'Click "Save"', command: () => history.push('/menu/confirmation') }
     ];
 
     const tieredMenuItems = [
@@ -499,23 +499,11 @@ const MenuDemo = () => {
 
     return (
         <div className="grid p-fluid">
-            <div className="col-12">
-                <div className="card card-w-title">
-                    <h5>Menubar</h5>
-                    <Menubar model={nestedMenuitems} end={menubarEndTemplate}></Menubar>
-                </div>
-            </div>
 
-            <div className="col-12">
-                <div className="card card-w-title">
-                    <h5>Breadcrumb</h5>
-                    <BreadCrumb home={breadcrumbHome} model={breadcrumbItems} />
-                </div>
-            </div>
 
             <div className="col-12 md:col-6">
                 <div className="card card-w-title">
-                    <h5>Steps</h5>
+                    <h5>How to Use Play Product Management</h5>
                     <Steps model={wizardItems} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false} />
                     <Route exact path={'/menu'} component={PersonalDemo} />
                     <Route path={'/menu/confirmation'} component={ConfirmationDemo} />
@@ -524,62 +512,9 @@ const MenuDemo = () => {
                 </div>
             </div>
 
-            <div className="col-12 md:col-6">
-                <div className="card card-w-title">
-                    <h5>TabMenu</h5>
-                    <TabMenu model={wizardItems} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
-                    <Route exact path={'/menu'} component={PersonalDemo} />
-                    <Route path={'/menu/confirmation'} component={ConfirmationDemo} />
-                    <Route path={'/menu/payment'} component={PaymentDemo} />
-                    <Route path={'/menu/seat'} component={SeatDemo} />
-                </div>
-            </div>
 
-            <div className="col-12 md:col-4">
-                <div className="card">
-                    <h5>Tiered Menu</h5>
-                    <TieredMenu model={tieredMenuItems} />
-                </div>
-            </div>
 
-            <div className="col-12 md:col-4">
-                <div className="card">
-                    <h5>Plain Menu</h5>
-                    <Menu model={menuitems} />
-                </div>
-            </div>
 
-            <div className="col-12 md:col-4">
-                <div className="card">
-                    <h5>Overlay Menu</h5>
-
-                    <Menu ref={menu} model={overlayMenuItems} popup />
-                    <Button type="button" label="Options" icon="pi pi-angle-down" onClick={toggleMenu} style={{ width: 'auto' }} />
-                </div>
-
-                <div className="card" onContextMenu={onContextRightClick}>
-                    <h5>ContextMenu</h5>
-                    Right click to display.
-                    <ContextMenu ref={contextMenu} model={contextMenuItems} />
-                </div>
-            </div>
-
-            <div className="col-12 md:col-6">
-                <div className="card">
-                    <h5>MegaMenu - Horizontal</h5>
-                    <MegaMenu model={megamenuItems} />
-
-                    <h5 style={{ marginTop: '1.55em' }}>MegaMenu - Vertical</h5>
-                    <MegaMenu model={megamenuItems} orientation="vertical" />
-                </div>
-            </div>
-
-            <div className="col-12 md:col-6">
-                <div className="card">
-                    <h5>PanelMenu</h5>
-                    <PanelMenu model={panelMenuitems} />
-                </div>
-            </div>
         </div>
     )
 }
