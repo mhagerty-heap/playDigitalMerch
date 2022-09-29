@@ -501,7 +501,7 @@ const MenuDemo = () => {
         <div className="grid p-fluid">
 
 
-            <div className="col-12 md:col-6">
+            <div className="col-fixed">
                 <div className="card card-w-title">
                     <h5>How to Use Play Product Management</h5>
                     <Steps model={wizardItems} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false} />
