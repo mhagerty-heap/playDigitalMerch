@@ -5736,7 +5736,7 @@
               <h3 id="midContactTop" class="font-semibold mb-8 text-2xl md:text-[26px]">
                 Send us a Message
               </h3>
-              <form>
+              <form action="javascript:submitButton();">
                 <div class="mb-6">
                   <label for="fullName" class="block text-xs text-dark"
                     >Full Name*</label
@@ -5824,6 +5824,27 @@
                   >
                     Send Message
                   </button>
+                  <div id="thankYouMessage" hidden>
+                    <br><b>Thank you!  We'll contact you soon.<b><br>
+                  </div>
+                  <script>
+                      function submitButton() {
+                          var emailAddress = document.querySelector("#contact > div.container.px-4 > div > div.px-4.w-full.lg\\:w-5\\/12.xl\\:w-4\\/12 > div > form > div:nth-child(2) > input").value;
+                          if (emailAddress.indexOf('@') === -1) {
+                              console.log("no @ in email address");
+                          } else {
+                              //replace with Identify call
+                              console.log("@ in email address, Heap Identify Call made");
+                              if (emailAddress != '') {
+                                  heap.identify(emailAddress);
+                                  heap.addUserProperties({ "Contact Form Completed": "Yes" });
+                              }
+                          }
+                          thankYouDiv = document.getElementById("thankYouMessage");
+                          thankYouDiv.removeAttribute("hidden");
+                      }
+                  </script>
+
                 </div>
               </form>
             </div>
