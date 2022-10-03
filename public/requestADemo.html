@@ -688,7 +688,7 @@
                     " />
                             </div> -->
                             <div class="mb-10">
-                                <input type="submit" id="signUpButton" value="Request a Demo" class="
+                                <input type="submit" id="requestADemoButton" value="Request a Demo" class="
                       w-full
                       rounded-md
                       border
@@ -703,6 +703,13 @@
                       duration-300
                       ease-in-out
                     " />
+                    <div class="text-sm font-medium text-black" id="thankYouMessage" hidden>
+                    <br><b>Thank you!  We'll contact you soon.<b>
+                    </div>
+
+
+
+
                                 <script>
                                 function submitButton() {
                                     var emailAddress = document.getElementById("signUpEmailField").value;
@@ -715,8 +722,10 @@
                                         console.log("@ in email address, Heap Identify Call made");
                                         if (emailAddress != ''){
                                           heap.identify(emailAddress);
+                                          heap.addUserProperties({ "Demo": "Requested" });
+                                          thankYouDiv = document.getElementById("thankYouMessage");
+                                          thankYouDiv.removeAttribute("hidden");
                                         }
-                                        window.location.href = "requestADemoThankYou.html";
                                     }
                                 }
                                 </script>
@@ -782,13 +791,6 @@
 
                         <p class="text-base text-[#adadad] mb-4">
                             When you request a demo, a Play team member will contact you within 1 Business Day.
-                            <!-- <a href="javascript:void(0)" class="text-primary hover:underline">
-                                Privacy
-                            </a>
-                            and
-                            <a href="javascript:void(0)" class="text-primary hover:underline">
-                                Policy
-                            </a> -->
                         </p>
 <!--
                         <p class="text-base text-[#adadad]">
