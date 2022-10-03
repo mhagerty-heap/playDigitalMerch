@@ -872,8 +872,8 @@
                                     <p class="text-base text-white mb-8">
                                         Enter your email to receive the entire White Paper by email.
                                     </p>
-                                    <form>
-                                        <input type="email" placeholder="Your email address" class="
+                                    <form action="javascript:submitButton();">
+                                        <input type="email" id="emailField" placeholder="Your email address" class="
                           w-full
                           text-center
                           h-[50px]
@@ -909,6 +909,30 @@
                                     <p class="text-sm font-medium text-white">
                                         Don't worry, we don't spam
                                     </p>
+                                    <div class="text-sm font-medium text-white" id="thankYouMessage" hidden>
+                                    <br><b>Thank you!  We'll contact you soon.<b>
+                                    </div>
+
+                                    <script>
+                                        function submitButton() {
+                                            var emailAddress = document.getElementById("emailField").value;
+                                            if (emailAddress.indexOf('@') === -1) {
+                                                console.log("no @ in email address");
+                                            } else {
+                                                //replace with Identify call
+                                                console.log("@ in email address, Heap Identify Call made");
+                                                if (emailAddress != '') {
+                                                    heap.identify(emailAddress);
+                                                    heap.addUserProperties({ "WhitepaperOne": "Downloaded" });
+                                                    thankYouDiv = document.getElementById("thankYouMessage");
+                                                    thankYouDiv.removeAttribute("hidden");
+                                                }
+                                            }
+                                        }
+                                    </script>
+
+
+
 
                                     <div>
                                         <span class="absolute top-0 right-0">
