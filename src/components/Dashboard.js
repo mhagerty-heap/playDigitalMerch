@@ -337,7 +337,7 @@ const Dashboard = (props) => {
                         <div className="text-white font-medium text-5xl">Become a Play Expert</div>
                     </div>
                     <div className="mt-4 mr-auto md:mt-0 md:mr-0">
-                        <a href="/menu" className="p-button font-bold px-5 py-3 p-button-warning p-button-rounded p-button-raised">
+                        <a href="/tutorial" className="p-button font-bold px-5 py-3 p-button-warning p-button-rounded p-button-raised">
                             Play Tutorial
                         </a>
                     </div>
