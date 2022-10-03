@@ -193,7 +193,7 @@ const App = () => {
         {
             label: 'Play Onboarding',
             items: [
-                { label: 'Tutorial', icon: 'pi pi-fw pi-eye', to: '/menu', badge: "NEW" },
+                { label: 'Tutorial', icon: 'pi pi-fw pi-eye', to: '/tutorial', badge: "NEW" },
                 // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-react' }
             ]
         },
@@ -315,7 +315,7 @@ const App = () => {
                     <Route path="/panel" component={PanelDemo} />
                     <Route path="/overlay" component={OverlayDemo} />
                     <Route path="/media" component={MediaDemo} />
-                    <Route path="/menu" component={MenuDemo} />
+                    <Route path="/tutorial" component={MenuDemo} />
                     <Route path="/messages" component={MessagesDemo} />
                     <Route path="/blocks" component={BlocksDemo} />
                     <Route path="/icons" component={IconsDemo} />

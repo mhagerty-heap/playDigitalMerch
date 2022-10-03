@@ -48,10 +48,10 @@ const MenuDemo = () => {
     }, [checkActiveIndex])
 
     const wizardItems = [
-        { label: 'Click "Product Management"', command: () => history.push('/menu') },
-        { label: 'Click "New"', command: () => history.push('/menu/seat') },
-        { label: 'Enter Product Details', command: () => history.push('/menu/payment') },
-        { label: 'Click "Save"', command: () => history.push('/menu/confirmation') }
+        { label: 'Click "Product Management"', command: () => history.push('/tutorial') },
+        { label: 'Click "New"', command: () => history.push('/tutorial/tutorialStep2') },
+        { label: 'Enter Product Details', command: () => history.push('/tutorial/tutorialStep3') },
+        { label: 'Click "Save"', command: () => history.push('/tutorial/tutorialStep4') }
     ];
 
     return (
@@ -60,10 +60,11 @@ const MenuDemo = () => {
                 <div className="card card-w-title">
                     <h5>How to Use Play Product Management</h5>
                     <Steps model={wizardItems} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false} />
-                    <Route exact path={'/menu'} component={PersonalDemo} />
-                    <Route path={'/menu/confirmation'} component={ConfirmationDemo} />
-                    <Route path={'/menu/payment'} component={PaymentDemo} />
-                    <Route path={'/menu/seat'} component={SeatDemo} />
+                    <Route exact path={'/tutorial'} component={PersonalDemo} />
+                    <Route path={'/tutorial/tutorialStep2'} component={SeatDemo} />
+                    <Route path={'/tutorial/tutorialStep3'} component={PaymentDemo} />
+                    <Route path={'/tutorial/tutorialStep4'} component={ConfirmationDemo} />
+
                 </div>
             </div>
         </div>
