@@ -28,6 +28,7 @@ import TreeDemo from './components/TreeDemo';
 import InvalidStateDemo from './components/InvalidStateDemo';
 import BlocksDemo from './components/BlocksDemo';
 import IconsDemo from './components/IconsDemo';
+import CreateASupportTicket from './components/CreateASupportTicket';
 
 import Crud from './pages/Crud';
 import EmptyPage from './pages/EmptyPage';
@@ -197,6 +198,13 @@ const App = () => {
                 // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-react' }
             ]
         },
+        {
+            label: 'Play Support',
+            items: [
+                { label: 'Create A Support Ticket', icon: 'pi pi-fw pi-ticket', to: '/createASupportTicket' },
+                // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-react' }
+            ]
+        },
         // {
         //     label: 'Icons',
         //     items: [
@@ -326,6 +334,7 @@ const App = () => {
                     <Route path="/crud" component={Crud} />
                     <Route path="/empty" component={EmptyPage} />
                     <Route path="/documentation" component={Documentation} />
+                    <Route path="/createASupportTicket" component={CreateASupportTicket} />
                 </div>
 
                 <AppFooter layoutColorMode={layoutColorMode} />
