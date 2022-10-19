@@ -78,7 +78,7 @@ const CreateASupportTicket = () => {
                         <div className="field">
                             <span className="p-float-label">
                                 <Controller name="ticketIssue" control={control} rules={{ required: 'ticketIssue is required.' }} render={({ field, fieldState }) => (
-                                    <InputTextarea id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
+                                    <InputTextarea rows={8} id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
                                 )} />
                                 <label htmlFor="ticketIssue" className={classNames({ 'p-error': errors.ticketIssue })}>Please describe your technical issue.</label>
                             </span>
