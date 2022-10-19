@@ -49,7 +49,7 @@ const CreateASupportTicket = () => {
                 </div>
             </Dialog>
 
-            <div className="flex justify-content-center">
+            <div className="grid p-fluid">
                 <div className="card">
                     <h5 className="text-center">Create A Play Support Ticket</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
@@ -78,21 +78,12 @@ const CreateASupportTicket = () => {
                         <div className="field">
                             <span className="p-float-label">
                                 <Controller name="ticketIssue" control={control} rules={{ required: 'ticketIssue is required.' }} render={({ field, fieldState }) => (
-                                    <InputTextarea rows={8} id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
+                                    <InputTextarea rows={15} cols={80} id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
                                 )} />
                                 <label htmlFor="ticketIssue" className={classNames({ 'p-error': errors.ticketIssue })}>Please describe your technical issue.</label>
                             </span>
                             {getFormErrorMessage('ticketIssue')}
                         </div>
-
-
-                        <div className="field-checkbox">
-                            <Controller name="accept" control={control} rules={{ required: true }} render={({ field, fieldState }) => (
-                                <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} className={classNames({ 'p-invalid': fieldState.invalid })} />
-                            )} />
-                            <label htmlFor="accept" className={classNames({ 'p-error': errors.accept })}>I agree to the terms and conditions defined within my Play Contract related to Support*</label>
-                        </div>
-
                         <Button type="submit" label="Submit" className="mt-2" />
                     </form>
                 </div>
