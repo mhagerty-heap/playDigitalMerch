@@ -11,12 +11,12 @@ import { ContextMenu } from 'primereact/contextmenu';
 import { MegaMenu } from 'primereact/megamenu';
 import { PanelMenu } from 'primereact/panelmenu';
 import { Route, useHistory, useLocation } from 'react-router-dom';
-import { PersonalDemo } from '../components/menu/PersonalDemo';
-import { ConfirmationDemo } from '../components/menu/ConfirmationDemo';
-import { PaymentDemo } from '../components/menu/PaymentDemo';
-import { SeatDemo } from '../components/menu/SeatDemo';
+import { TutorialStep1 } from '../components/menu/TutorialStep1';
+import { TutorialStep4 } from '../components/menu/TutorialStep4';
+import { TutorialStep3 } from '../components/menu/TutorialStep3';
+import { TutorialStep2 } from '../components/menu/TutorialStep2';
 
-const MenuDemo = () => {
+const Tutorial = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const menu = useRef(null);
@@ -60,10 +60,10 @@ const MenuDemo = () => {
                 <div className="card card-w-title">
                     <h5>How to Use Play Product Management</h5>
                     <Steps model={wizardItems} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false} />
-                    <Route exact path={'/tutorial'} component={PersonalDemo} />
-                    <Route path={'/tutorial/tutorialStep2'} component={SeatDemo} />
-                    <Route path={'/tutorial/tutorialStep3'} component={PaymentDemo} />
-                    <Route path={'/tutorial/tutorialStep4'} component={ConfirmationDemo} />
+                    <Route exact path={'/tutorial'} component={TutorialStep1} />
+                    <Route path={'/tutorial/tutorialStep2'} component={TutorialStep2} />
+                    <Route path={'/tutorial/tutorialStep3'} component={TutorialStep3} />
+                    <Route path={'/tutorial/tutorialStep4'} component={TutorialStep4} />
 
                 </div>
             </div>
@@ -75,4 +75,4 @@ const comparisonFn = function (prevProps, nextProps) {
     return prevProps.location.pathname === nextProps.location.pathname;
 };
 
-export default React.memo(MenuDemo, comparisonFn);
+export default React.memo(Tutorial, comparisonFn);

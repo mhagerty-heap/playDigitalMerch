@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const SeatDemo = () => {
+export const TutorialStep4 = () => {
     return (
         <div className="flex align-items-center py-5 px-3">
-            <img width='600' height='400' src={'/images/onboarding/step2.png'} />
+            <img width='500' height='650' src={'/images/onboarding/step4.png'} />
         </div>
     )
 }

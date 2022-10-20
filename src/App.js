@@ -17,7 +17,7 @@ import FloatLabelDemo from './components/FloatLabelDemo';
 import FormLayoutDemo from './components/FormLayoutDemo';
 import InputDemo from './components/InputDemo';
 import ListDemo from './components/ListDemo';
-import MenuDemo from './components/MenuDemo';
+import Tutorial from './components/Tutorial';
 import MessagesDemo from './components/MessagesDemo';
 import MiscDemo from './components/MiscDemo';
 import OverlayDemo from './components/OverlayDemo';
@@ -323,7 +323,7 @@ const App = () => {
                     <Route path="/panel" component={PanelDemo} />
                     <Route path="/overlay" component={OverlayDemo} />
                     <Route path="/media" component={MediaDemo} />
-                    <Route path="/tutorial" component={MenuDemo} />
+                    <Route path="/tutorial" component={Tutorial} />
                     <Route path="/messages" component={MessagesDemo} />
                     <Route path="/blocks" component={BlocksDemo} />
                     <Route path="/icons" component={IconsDemo} />

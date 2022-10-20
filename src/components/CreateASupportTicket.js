@@ -51,7 +51,7 @@ const CreateASupportTicket = () => {
 
             <div className="grid p-fluid">
                 <div className="card">
-                    <h5 className="text-center">Create A Play Support Ticket</h5>
+                    <h5>Create A Play Support Ticket</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">
@@ -78,7 +78,7 @@ const CreateASupportTicket = () => {
                         <div className="field">
                             <span className="p-float-label">
                                 <Controller name="ticketIssue" control={control} rules={{ required: 'ticketIssue is required.' }} render={({ field, fieldState }) => (
-                                    <InputTextarea rows={15} cols={80} id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
+                                    <InputTextarea rows={15} cols={65} id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
                                 )} />
                                 <label htmlFor="ticketIssue" className={classNames({ 'p-error': errors.ticketIssue })}>Please describe your technical issue.</label>
                             </span>
