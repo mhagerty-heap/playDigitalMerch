@@ -14,7 +14,7 @@ import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { ProductService } from '../service/ProductService';
 
-const Crud = () => {
+const ProductManagement = () => {
     let emptyProduct = {
         id: null,
         name: '',
@@ -293,6 +293,7 @@ const Crud = () => {
         <div className="grid crud-demo">
             <div className="col-12">
                 <div className="card">
+                  <h5>Product Management</h5>
                     <Toast ref={toast} />
                     <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
@@ -381,4 +382,4 @@ const comparisonFn = function (prevProps, nextProps) {
     return prevProps.location.pathname === nextProps.location.pathname;
 };
 
-export default React.memo(Crud, comparisonFn);
+export default React.memo(ProductManagement, comparisonFn);

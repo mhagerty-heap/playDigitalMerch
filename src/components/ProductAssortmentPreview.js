@@ -7,7 +7,7 @@ import { Rating } from 'primereact/rating';
 // import { OrderList } from 'primereact/orderlist';
 import { ProductService } from '../service/ProductService';
 
-const ListDemo = () => {
+const ProductAssortmentPreview = () => {
     const listValue = [
         { name: 'San Francisco', code: 'SF' },
         { name: 'London', code: 'LDN' },
@@ -130,7 +130,7 @@ const ListDemo = () => {
         <div className="grid list-demo">
             <div className="col-12">
                 <div className="card">
-                    <h5>Product Preview</h5>
+                    <h5>Product Assortment Preview</h5>
                     <DataView value={dataviewValue} layout={layout} paginator rows={9} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} header={dataviewHeader}></DataView>
                 </div>
             </div>
@@ -142,4 +142,4 @@ const comparisonFn = function (prevProps, nextProps) {
     return prevProps.location.pathname === nextProps.location.pathname;
 };
 
-export default React.memo(ListDemo, comparisonFn);
+export default React.memo(ProductAssortmentPreview, comparisonFn);

@@ -51,7 +51,7 @@ const CreateASupportTicket = () => {
 
             <div className="grid p-fluid">
                 <div className="card">
-                    <h5>Create A Play Support Ticket</h5>
+                    <h5>Create A Support Ticket</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">

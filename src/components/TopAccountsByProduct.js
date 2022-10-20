@@ -16,7 +16,7 @@ import { Rating } from 'primereact/rating';
 import { CustomerService } from '../service/CustomerService';
 import { ProductService } from '../service/ProductService';
 
-const TableDemo = () => {
+const TopAccountsByProduct = () => {
     const [customers1, setCustomers1] = useState(null);
     const [customers2, setCustomers2] = useState([]);
     const [customers3, setCustomers3] = useState([]);
@@ -294,7 +294,7 @@ const TableDemo = () => {
         <div className="grid table-demo">
             <div className="col-12">
                 <div className="card">
-                    <h5>Corporate Accounts by Product</h5>
+                    <h5>Top Accounts by Product</h5>
                     <DataTable value={products} expandedRows={expandedRows} onRowToggle={(e) => setExpandedRows(e.data)} responsiveLayout="scroll"
                         rowExpansionTemplate={rowExpansionTemplate} dataKey="id" header={header}>
                         <Column expander style={{ width: '3em' }} />
@@ -315,4 +315,4 @@ const comparisonFn = function (prevProps, nextProps) {
     return prevProps.location.pathname === nextProps.location.pathname;
 };
 
-export default React.memo(TableDemo, comparisonFn);
+export default React.memo(TopAccountsByProduct, comparisonFn);
