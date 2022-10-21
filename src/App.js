@@ -29,6 +29,7 @@ import InvalidStateDemo from './components/InvalidStateDemo';
 import BlocksDemo from './components/BlocksDemo';
 import IconsDemo from './components/IconsDemo';
 import CreateASupportTicket from './components/CreateASupportTicket';
+import HelpDocumentation from './components/HelpDocumentation';
 
 import ProductManagement from './pages/ProductManagement';
 import EmptyPage from './pages/EmptyPage';
@@ -250,6 +251,7 @@ const App = () => {
                     <Route path="/empty" component={EmptyPage} />
                     <Route path="/documentation" component={Documentation} />
                     <Route path="/createASupportTicket" component={CreateASupportTicket} />
+                    <Route path="/helpDocumentation" component={HelpDocumentation} />
                 </div>
 
                 <AppFooter layoutColorMode={layoutColorMode} />
