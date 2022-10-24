@@ -15,7 +15,7 @@ const HelpDocumentation = () => {
         setTimeout(function(){  // set a 1 second timeout to wait for heap to load, not a great way to do this, but it works for now
           console.log('page loaded');
           var heapIdentity = window.heap.identity;
-          console.log('Heap Identity = ' + heapIdentity);
+          // console.log('Heap Identity on play-digital-merch.vercel.app = ' + heapIdentity);
 
           if (heapIdentity == null) {
               // add child iFrame to docsIframe parent without heapId as query string
@@ -23,7 +23,8 @@ const HelpDocumentation = () => {
               iFrameWithoutIdentity.setAttribute("width", "1000px");
               iFrameWithoutIdentity.setAttribute("height", "800px");
               iFrameWithoutIdentity.setAttribute("src", "https://play-digital-merch-documentation.vercel.app/");
-              console.log("requesting https://play-digital-merch-documentation.vercel.app/")
+              console.log("No Heap Identity Set on play-digital-merch.vercel.app domain");
+              console.log("requesting in iFrame: https://play-digital-merch-documentation.vercel.app/");
               document.getElementById("docsIframe").appendChild(iFrameWithoutIdentity);
           } else {
               // add child iFrame to docsIframe parent with heapId as query string
@@ -32,10 +33,11 @@ const HelpDocumentation = () => {
               iFrameWithIdentity.setAttribute("width", "1000px");
               iFrameWithIdentity.setAttribute("height", "800px");
               iFrameWithIdentity.setAttribute("src", urlWithIdentity);
-              console.log("requesting " + urlWithIdentity);
+              console.log("Heap Identity on play-digital-merch.vercel.app domain = " + heapIdentity);
+              console.log("requesting in iFrame: " + urlWithIdentity);
               document.getElementById("docsIframe").appendChild(iFrameWithIdentity);
           }
-        }, 1000);
+        }, 1000); // where to set timeone, currently set to 1 second
 
 
     }
