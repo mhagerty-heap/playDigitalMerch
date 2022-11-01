@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
+import { Toast } from 'primereact/toast';
 // import { PickList } from 'primereact/picklist';
 // import { OrderList } from 'primereact/orderlist';
 import { ProductService } from '../service/ProductService';
@@ -32,6 +33,13 @@ const ProductAssortmentPreview = () => {
         { label: 'Price Low to High', value: 'price' }
     ];
 
+    const toast = useRef(null);
+
+    const exportCSV = () => {
+      toast.current.show({severity: 'success', summary: 'File Export', detail: 'Server Process Initiated'});
+
+    }
+
     useEffect(() => {
         const productService = new ProductService();
         productService.getProducts().then(data => setDataviewValue(data));
@@ -54,8 +62,11 @@ const ProductAssortmentPreview = () => {
 
     const dataviewHeader = (
         <div className="grid grid-nogutter">
-            <div className="col-6" style={{ textAlign: 'left' }}>
+            <div className="col-2" style={{ textAlign: 'left' }}>
                 <Dropdown value={sortKey} options={sortOptions} optionLabel="label" placeholder="Sort By Price" onChange={onSortChange} />
+            </div>
+            <div className="col-4" style={{ textAlign: 'left' }}>
+                <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />
             </div>
             <div className="col-6" style={{ textAlign: 'right' }}>
                 <DataViewLayoutOptions layout={layout} onChange={(e) => setLayout(e.value)} />
@@ -130,13 +141,16 @@ const ProductAssortmentPreview = () => {
         <div className="grid list-demo">
             <div className="col-12">
                 <div className="card">
+
+                    <Toast ref={toast} />
+
                     <h5>Product Assortment Preview&nbsp;&nbsp;
                     <a href="/tutorial">
                       <button className="p-link layout-topbar-button" >
                         <i className="pi pi-eye"/>
                       </button>
                     </a>
-                    </h5>                    
+                    </h5>
                     <DataView value={dataviewValue} layout={layout} paginator rows={9} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} header={dataviewHeader}></DataView>
                 </div>
             </div>
