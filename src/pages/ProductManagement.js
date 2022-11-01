@@ -293,7 +293,16 @@ const ProductManagement = () => {
         <div className="grid crud-demo">
             <div className="col-12">
                 <div className="card">
-                  <h5>Product Management</h5>
+                  <h5>Product Management&nbsp;&nbsp;
+                  <a href="/tutorial">
+                    <button className="p-link layout-topbar-button" >
+                      <i className="pi pi-eye"/>
+                    </button>
+                  </a>
+                  </h5>
+
+
+
                     <Toast ref={toast} />
                     <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 

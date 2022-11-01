@@ -130,7 +130,13 @@ const ProductAssortmentPreview = () => {
         <div className="grid list-demo">
             <div className="col-12">
                 <div className="card">
-                    <h5>Product Assortment Preview</h5>
+                    <h5>Product Assortment Preview&nbsp;&nbsp;
+                    <a href="/tutorial">
+                      <button className="p-link layout-topbar-button" >
+                        <i className="pi pi-eye"/>
+                      </button>
+                    </a>
+                    </h5>                    
                     <DataView value={dataviewValue} layout={layout} paginator rows={9} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} header={dataviewHeader}></DataView>
                 </div>
             </div>

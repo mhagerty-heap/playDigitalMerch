@@ -294,7 +294,13 @@ const TopAccountsByProduct = () => {
         <div className="grid table-demo">
             <div className="col-12">
                 <div className="card">
-                    <h5>Top Accounts by Product</h5>
+                    <h5>Top Accounts by Product&nbsp;&nbsp;
+                    <a href="/tutorial">
+                      <button className="p-link layout-topbar-button" >
+                        <i className="pi pi-eye"/>
+                      </button>
+                    </a>
+                    </h5>
                     <DataTable value={products} expandedRows={expandedRows} onRowToggle={(e) => setExpandedRows(e.data)} responsiveLayout="scroll"
                         rowExpansionTemplate={rowExpansionTemplate} dataKey="id" header={header}>
                         <Column expander style={{ width: '3em' }} />
