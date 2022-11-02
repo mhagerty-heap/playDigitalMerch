@@ -62,10 +62,10 @@ const ProductAssortmentPreview = () => {
 
     const dataviewHeader = (
         <div className="grid grid-nogutter">
-            <div className="col-2" style={{ textAlign: 'left' }}>
+            <div className="col-3" style={{ textAlign: 'left' }}>
                 <Dropdown value={sortKey} options={sortOptions} optionLabel="label" placeholder="Sort By Price" onChange={onSortChange} />
             </div>
-            <div className="col-4" style={{ textAlign: 'left' }}>
+            <div className="col-3" style={{ textAlign: 'left' }}>
                 <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />
             </div>
             <div className="col-6" style={{ textAlign: 'right' }}>
