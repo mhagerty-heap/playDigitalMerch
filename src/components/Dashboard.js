@@ -5,6 +5,10 @@ import { Chart } from 'primereact/chart';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ProductService } from '../service/ProductService';
+import { Toast } from 'primereact/toast';
+
+
+
 
 const lineData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -29,6 +33,13 @@ const lineData = {
 };
 
 const Dashboard = (props) => {
+    //const toast = useRef(null);
+
+    const toast = useRef(null);
+
+    const exportCSV = () => {
+      toast.current.show({severity: 'success', summary: 'File Export', detail: 'Server Process Initiated'});
+    }
     const [products, setProducts] = useState(null);
     const menu1 = useRef(null);
     const menu2 = useRef(null);
@@ -180,7 +191,15 @@ const Dashboard = (props) => {
 
             <div className="col-12 xl:col-6">
                 <div className="card">
+                  <Toast ref={toast} />
+                  <div>
                     <h5>Recent Sales</h5>
+                  </div>
+                  <div className="" style={{ textAlign: 'right' }}>
+                    <button onClick={exportCSV} className="p-link layout-topbar-button" >
+                        <i className="pi pi-cloud-download"/>
+                    </button>
+                  </div>
                     <DataTable value={products} rows={5} paginator responsiveLayout="scroll">
                         <Column header="Image" body={(data) => <img className="shadow-2" src={`assets/demo/images/product/${data.image}`} alt={data.image} width="50"/>}/>
                         <Column field="name" header="Name" sortable style={{width: '35%'}}/>
@@ -279,7 +298,15 @@ const Dashboard = (props) => {
 
             <div className="col-12 xl:col-6">
                 <div className="card">
-                    <h5>Sales Overview</h5>
+                    <div>
+                      <h5>Sales Overview</h5>
+                    </div>
+                    <div className="" style={{ textAlign: 'right' }}>
+                      <button onClick={exportCSV} className="p-link layout-topbar-button" >
+                          <i className="pi pi-cloud-download"/>
+                      </button>
+                    </div>
+
                     <Chart type="line" data={lineData} options={lineOptions} />
                 </div>
 
