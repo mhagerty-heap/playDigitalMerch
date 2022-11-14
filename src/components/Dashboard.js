@@ -302,8 +302,8 @@ const Dashboard = (props) => {
                       <h5>Sales Overview</h5>
                     </div>
                     <div className="" style={{ textAlign: 'right' }}>
-                      <button onClick={exportCSV} className="p-link layout-topbar-button" placeholder="salesOverviewExportButton">
-                          <i className="pi pi-cloud-download" placeholder="salesOverviewExportButton"/>
+                      <button onClick={exportCSV} className="p-link layout-topbar-button" id="salesOverviewExportButtonId" aria-label="salesOverviewExportButton" placeholder="salesOverviewExportButton">
+                          <i className="pi pi-cloud-download" id="salesOverviewExportItagId" aria-label="salesOverviewExportItag" placeholder="salesOverviewExportItag"/>
                       </button>
                     </div>
 
