@@ -7,7 +7,7 @@ import { Column } from 'primereact/column';
 import { ProductService } from '../service/ProductService';
 import { Toast } from 'primereact/toast';
 
-
+// Maintaining in code until tested: This at line 310 for the original Sales Overview Chart that was replaced with an image: <Chart type="line" data={lineData} options={lineOptions} />
 
 
 const lineData = {
@@ -306,8 +306,8 @@ const Dashboard = (props) => {
                           <i className="pi pi-cloud-download" id="salesOverviewExportItagId" aria-label="salesOverviewExportItag" placeholder="salesOverviewExportItag"/>
                       </button>
                     </div>
+                    <img src="assets/demo/images/dashboard/salesOverviewDashboard.png" style={{width: '100%'}}/>
 
-                    <Chart type="line" data={lineData} options={lineOptions} />
                 </div>
 
                 <div className="card">
