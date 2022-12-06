@@ -500,7 +500,7 @@
                         </div>
                         <form id="signUpForm" name="signUpForm" action="javascript:submitButton();">
                             <div class="mb-6">
-                                <input type="text" id="signUpNameField" placeholder="Name" class="
+                                <input type="text" id="signUpNameField" name="signUpNameField" placeholder="Name" class="
                       w-full
                       rounded-md
                       border
@@ -517,7 +517,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="email" id="signUpEmailField" placeholder="Email: Use test data (no PII)" class="
+                                <input type="email" id="signUpEmailField" name="signUpEmailField" placeholder="Email: Use test data (no PII)" class="
                       w-full
                       rounded-md
                       border
@@ -534,7 +534,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="password" id="signUpPasswordField" placeholder="Password" class="
+                                <input type="password" id="signUpPasswordField" name="signUpPasswordField" placeholder="Password" class="
                       w-full
                       rounded-md
                       border
@@ -551,7 +551,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="text" id="signUpStreetAddressField" placeholder="Street Address" class="
+                                <input type="text" id="signUpStreetAddressField" name="signUpStreetAddressField" placeholder="Street Address" class="
                       w-full
                       rounded-md
                       border
@@ -568,7 +568,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="text" id="signUpZipCodeField" placeholder="Zip Code" class="
+                                <input type="text" id="signUpZipCodeField" name="signUpZipCodeField" placeholder="Zip Code" class="
                       w-full
                       rounded-md
                       border
@@ -585,7 +585,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="text" id="signUpMobileNumberField" placeholder="Mobile Number ex: (123) 123-1234" class="
+                                <input type="text" id="signUpMobileNumberField" name="signUpMobileNumberField" placeholder="Mobile Number ex: (123) 123-1234" class="
                       w-full
                       rounded-md
                       border
@@ -603,13 +603,13 @@
                             </div>
 
                             <div class="mb-6">
-                                <input type="radio" name="plan" id="freePlanRadioSelection" value="Free">
+                                <input type="radio" name="freePlanRadioSelection" id="freePlanRadioSelection" value="Free">
                                 <label for="freePlanRadioSelection">Free ($00.00 per month)</label><br><br>
-                                <input type="radio" name="plan" id="proPlanRadioSelection" value="Pro">
+                                <input type="radio" name="proPlanRadioSelection" id="proPlanRadioSelection" value="Pro">
                                 <label for="proPlanRadioSelection">Pro ($19.99 per month)</label><br><br>
-                                <input type="radio" name="plan" id="enterprisePlanRadioSelection" value="Enterprise">
+                                <input type="radio" name="enterprisePlanRadioSelection" id="enterprisePlanRadioSelection" value="Enterprise">
                                 <label for="enterprisePlanRadioSelection">Enterprise ($70.99 per month)</label><br><br>
-                                <input type="radio" name="plan" id="upgradePlanRadioSelection" value="Upgrade">
+                                <input type="radio" name="upgradePlanRadioSelection" id="upgradePlanRadioSelection" value="Upgrade">
                                 <label for="upgradePlanRadioSelection">Upgrade ($10.00 per month)</label><br><br>
                             </div>
 
@@ -637,7 +637,7 @@
                             </script>
 
                             <div class="mb-6">
-                                <input type="text" id="creditCardNumberField" placeholder="Credit Card ex: XXXX-XXXX-XXXX-XXXX" class="
+                                <input type="text" id="creditCardNumberField" name="creditCardNumberField" placeholder="Credit Card ex: XXXX-XXXX-XXXX-XXXX" class="
                       w-full
                       rounded-md
                       border
@@ -654,7 +654,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="text" id="creditCardExpirationField" placeholder="Credit Card Expiration ex: 4/26" class="
+                                <input type="text" id="creditCardExpirationField" name="creditCardExpirationField" placeholder="Credit Card Expiration ex: 4/26" class="
                       w-full
                       rounded-md
                       border
@@ -671,7 +671,7 @@
                     " />
                             </div>
                             <div class="mb-6">
-                                <input type="text" id="creditCardCodeField" placeholder="Credit Card Code ex: 1234" class="
+                                <input type="text" id="creditCardCodeField" name="creditCardCodeField" placeholder="Credit Card Code ex: 1234" class="
                       w-full
                       rounded-md
                       border
